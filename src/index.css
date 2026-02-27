@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Libre Baskerville", serif;
+  
+  --color-brand-cream: #fdfaf0;
+  --color-brand-baby-blue: #ADD8E6;
+  --color-brand-turquoise: #40e0d0;
+  --color-brand-pink: #f8c8dc;
+  --color-brand-olive: #5a5a40;
+  --color-brand-clay: #a67c52;
+  --color-brand-ink: #2c2c24;
+  --color-brand-atomic: #ff8c00;
+  --color-brand-azulejo: #0047AB;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-cream text-brand-ink font-sans antialiased;
+    /* Portuguese Azulejo Tile Pattern */
+    background-image: 
+      linear-gradient(45deg, rgba(0, 71, 171, 0.05) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(0, 71, 171, 0.05) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(0, 71, 171, 0.05) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(0, 71, 171, 0.05) 75%);
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px 20px, 20px 0;
+    background-color: #fdfaf0;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+.card-shadow {
+  box-shadow: 8px 8px 0px rgba(44, 44, 36, 0.1);
+}
+
+.diner-chrome {
+  @apply border-4 border-slate-300 shadow-[inset_0_2px_4px_rgba(255,255,255,0.8),4px_4px_0_rgba(44,44,36,1)];
+  background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e1 50%, #94a3b8 100%);
+}
+
+.btn-primary {
+  @apply bg-brand-baby-blue text-brand-ink px-8 py-4 rounded-full font-bold transition-all hover:scale-105 active:scale-95 border-4 border-brand-ink shadow-[4px_4px_0px_rgba(44,44,36,1)] flex items-center justify-center gap-2;
+}
+
+.btn-secondary {
+  @apply bg-brand-pink border-4 border-brand-ink text-brand-ink px-8 py-4 rounded-full font-bold transition-all hover:bg-brand-pink/80 active:scale-95 shadow-[4px_4px_0px_rgba(44,44,36,1)] flex items-center justify-center gap-2;
+}
+
+.retro-border {
+  @apply border-4 border-brand-ink;
+}
+
+.azulejo-border {
+  border: 8px solid transparent;
+  border-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm20 20l20-20H0l20 20zm0 0L0 40h40L20 20z' fill='%230047AB' fill-opacity='.1'/%3E%3C/svg%3E") 20 stretch;
+}
